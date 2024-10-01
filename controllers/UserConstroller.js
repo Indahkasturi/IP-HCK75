@@ -4,13 +4,17 @@ module.exports = class UserController{
         try {
 
         } catch (error) {
+            next(error)
         }
     }
+
+
     static async login (req, res, next){
         try {
             
         } catch (error) {
-            
+            next(error)
         }
     }
+
 }

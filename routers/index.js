@@ -1,6 +1,7 @@
 const express = require('express')
 const UserController = require('../controllers/UserConstroller')
 const AlbumController = require('../controllers/AlbumController')
+const { errorHandler } = require('../middleware/errorHandler')
 const router = express.Router()
 
 router.post('/register', UserController.register)
@@ -12,3 +13,7 @@ router.put('/update/:id', AlbumController.updateAlbumById)
 router.delete('/delete/:id', AlbumController.deleteAlbumById)
 router.post('/cart/:id', AlbumController.addToCart)
 router.post('/logout/:id', AlbumController.logOut)
+
+router.use(errorHandler)
+
+module.exports = router
