@@ -12,6 +12,11 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+    const albums = await require("../data/album.json").map((el) => {
+      el.createdAt = el.updatedAt = new Date();
+      return el;
+    });
+    await queryInterface.bulkInsert("Albums", users);
   },
 
   async down (queryInterface, Sequelize) {
@@ -21,5 +26,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete("Albums", null);
   }
 };
