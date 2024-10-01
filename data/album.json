@@ -1,0 +1,28 @@
+[
+    {
+      "artistName": "Taylor Swift",
+      "albumTitle": "1989",
+      "genre": "Pop"
+    },
+    {
+      "artistName": "Drake",
+      "albumTitle": "Scorpion",
+      "genre": "Hip-Hop"
+    },
+    {
+      "artistName": "The Beatles",
+      "albumTitle": "Abbey Road",
+      "genre": "Rock"
+    },
+    {
+      "artistName": "Adele",
+      "albumTitle": "25",
+      "genre": "Soul"
+    },
+    {
+      "artistName": "Daft Punk",
+      "albumTitle": "Random Access Memories",
+      "genre": "Electronic"
+    }
+  ]
+  

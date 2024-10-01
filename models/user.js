@@ -50,8 +50,17 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
+      role:{
+        type: DataTypes.STRING,
+        defaultValue: "User"
+      }
     },
     {
+      hooks:{
+        beforeValidate: async (instance, option)=>{
+          instance.password = await hash(instance.password)
+        }
+      },
       sequelize,
       modelName: "User",
     }
