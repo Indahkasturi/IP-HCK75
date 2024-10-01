@@ -3,3 +3,6 @@ npx sequelize model:generate --name Album --attributes artistName:string,albumTi
 npx sequelize model:generate --name AlbumUser --attributes UserId:number,AlbumId:number
 npx sequelize db:migrate
 npx sequelize-cli migration:generate --name add-column-role
+
+ npx sequelize db:create
+ npx sequelize db:seed:all

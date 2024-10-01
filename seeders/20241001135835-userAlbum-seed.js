@@ -12,11 +12,11 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    const userAlbums = await require("../data/albumUser.json").map((el) => {
+    const albumUser = await require("../data/albumUser.json").map((el) => {
       el.createdAt = el.updatedAt = new Date();
       return el;
     });
-    await queryInterface.bulkInsert("AlbumUsers", users);
+    await queryInterface.bulkInsert("AlbumUsers", albumUser);
   },
 
   async down (queryInterface, Sequelize) {

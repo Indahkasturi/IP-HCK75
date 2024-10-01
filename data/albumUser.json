@@ -1,23 +1,23 @@
 [
     {
-      "userId": 1,
-      "albumId": 2
+      "UserId": 1,
+      "AlbumId": 2
     },
     {
-      "userId": 2,
-      "albumId": 3
+      "UserId": 2,
+      "AlbumId": 3
     },
     {
-      "userId": 3,
-      "albumId": 5
+      "UserId": 3,
+      "AlbumId": 5
     },
     {
-      "userId": 4,
-      "albumId": 1
+      "UserId": 4,
+      "AlbumId": 1
     },
     {
-      "userId": 5,
-      "albumId": 4
+      "UserId": 5,
+      "AlbumId": 4
     }
   ]
   
