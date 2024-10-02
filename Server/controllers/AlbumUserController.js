@@ -35,6 +35,22 @@ module.exports = class AlbumUserController {
     //     next (error)
     // }
   }
+  static async getCart(req, res, next){
+        try {
+            const userId = req.user.id
+
+            const cartItems = await AlbumUser.findAll({
+                where: {UserId: userId},
+                include: { 
+                    model: Album,
+                    attributes: ['id', 'albumTitle', 'artistName', 'genre', 'price', 'imageUrl']
+                }
+            })
+            res.status(200).json(cartItems)
+        } catch (error) {
+            next (error)
+        }
+  }
   static async deleteCart(req, res, next) {
     try {
       const { id } = req.params; 

@@ -40,9 +40,6 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     }, 
-    quantity: {
-      type: DataTypes.INTEGER,
-    }
   }, {
     sequelize,
     modelName: 'AlbumUser',
