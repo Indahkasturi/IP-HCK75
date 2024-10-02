@@ -29,6 +29,7 @@ module.exports = class AlbumUserController {
     //       if (!user) {
     //         return next({ statusCode: 404, message: 'User tidak ditemukan' });
     //       }
+    
     //       const albumUser = await AlbumUser.create({ UserId: userId, AlbumId: albumId });
     //       return res.status(201).json(albumUser);
     // } catch (error) {
