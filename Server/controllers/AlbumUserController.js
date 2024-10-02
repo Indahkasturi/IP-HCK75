@@ -9,7 +9,7 @@ module.exports = class AlbumUserController {
       const album = await Album.findByPk(id);
 
       if (!album) {
-        return next({ statusCode: 404, message: "Album not found" });
+        return next({ name: "NotFound", message: "Album not found" });
       }
       const albumUser = await AlbumUser.create({
         UserId: userId,
@@ -35,5 +35,23 @@ module.exports = class AlbumUserController {
     //     next (error)
     // }
   }
+  static async deleteCart(req, res, next) {
+    try {
+      const { id } = req.params; 
+      const userId = req.user.id; 
 
+      const albumUser = await AlbumUser.findOne({
+        where: { UserId: userId, AlbumId: id },
+      });
+
+      if (!albumUser) {
+        return next({ name: "NotFound", message: 'Album not found' });
+      }
+
+      await albumUser.destroy();
+      return res.status(200).json({ message: 'Album removed' });
+    } catch (error) {
+      next(error);
+    }
+  }
 };
