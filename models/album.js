@@ -15,6 +15,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Album.init({
+    imageUrl:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Image URL is required",
+        },
+        notNull: {
+          msg: "Image URL is required",
+        }
+      }
+    },
     artistName:{
       type: DataTypes.STRING,
       allowNull: false,
@@ -48,6 +60,18 @@ module.exports = (sequelize, DataTypes) => {
         },
         notNull: {
           msg: "Genre is required",
+        }
+      }
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Price is required",
+        },
+        notNull: {
+          msg: "Price is required",
         }
       }
     },

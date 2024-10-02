@@ -9,6 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      imageUrl: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       artistName: {
         allowNull: false,
         type: Sequelize.STRING,
@@ -20,6 +24,10 @@ module.exports = {
       genre: {
         allowNull: false,
         type: Sequelize.STRING,
+      },
+      price: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
