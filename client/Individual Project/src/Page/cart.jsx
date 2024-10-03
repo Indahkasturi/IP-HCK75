@@ -4,14 +4,13 @@ import axios from "axios";
 export default function Cart() {
   const [cartItems, setCartItems] = useState([]);
 
-  // Fungsi untuk mendapatkan item dari cart
   const fetchCartItems = async () => {
     try {
       const { data } = await axios({
         method: "get",
         url: "http://localhost:3000/cart",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("access_token")}`, // Menggunakan token yang disimpan
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`, 
         },
       });
 
@@ -34,7 +33,7 @@ export default function Cart() {
         ) : (
           <div className="row">
             {cartItems.map((item) => (
-              <div className="col-md-3 mb-4 col-sm-6" key={item.id}> {/* Gunakan key untuk setiap item */}
+              <div className="col-md-3 mb-4 col-sm-6" key={item.id}> 
                 <div className="card" style={{ width: "100%" }}>
                   <img
                     className="card-img-top"

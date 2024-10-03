@@ -4,15 +4,14 @@ import { useNavigate, useParams } from "react-router-dom";
 
 export default function Update() {
   const [artistName, setArtistName] = useState("");
-  const [albumTitle, setAlbumTitle] = useState(""); // Typo fix: setAlbumTiltle to setAlbumTitle
+  const [albumTitle, setAlbumTitle] = useState("");
   const [genre, setGenre] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [price, setPrice] = useState(0);
 
-  const { id } = useParams(); // Fix: useParams() should be called as a function
+  const { id } = useParams(); 
   const navigate = useNavigate();
 
-  // Fetch album data
   const getAlbum = async () => {
     try {
       const { data } = await axios.get(`http://localhost:3000/albums/${id}`, {
