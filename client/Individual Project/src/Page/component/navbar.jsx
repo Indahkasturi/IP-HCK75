@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-import Home from "../home";
+
+
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -14,11 +15,11 @@ export default function Navbar() {
   return (
     <section>
       <nav className="navbar navbar-light bg-light">
-        <Link to={`/`}>Home</Link>
-        <Link to={`/cart`}>Cart</Link>
+        <button className="btn btn-primary"><Link to={`/`}>Home</Link></button>
+        <Link to={`/cart`}> </Link>
         <button
           onClick={logout}
-          className="btn bg-red-600 text-white hover:bg-red-500"
+          className="btn btn-danger"
         >
           Logout
         </button>
