@@ -1,61 +1,85 @@
+import axios from "axios"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 
 export default function Register() {
-  return (
-    <section className="flex flex-col justify-center items-center h-screen bg-[#020617] ">
-  <div>
-    <h1 className="text-white text-3xl font-serif ">Register</h1>
-  </div>
-  <div>
-    <label className="input input-bordered border-amber-600 flex items-center gap-2 my-2">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 16 16"
-        fill="currentColor"
-        className="h-4 w-4 opacity-70"
-      >
-        <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-        <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-      </svg>
-      <input type="text" className="grow" placeholder="Email" />
-    </label>
-  </div>
-  <div>
-    <label className="input input-bordered border-amber-600 flex items-center gap-2 my-2">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 16 16"
-        fill="currentColor"
-        className="h-4 w-4 opacity-70"
-      >
-        <path
-          fillRule="evenodd"
-          d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
-          clipRule="evenodd"
-        />
-      </svg>
-      <input type="password" className="grow" defaultValue="password" />
-    </label>
-  </div>
-  <div>
-    <label className="input input-bordered border-amber-600 flex items-center gap-2 my-2">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 16 16"
-        fill="currentColor"
-        className="h-4 w-4 opacity-70"
-      >
-        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
-      </svg>
-      <input type="text" className="grow" placeholder="Role" />
-    </label>
-  </div>
-  <div className="flex flex-warp gap-5 border-amber-600">
-    <button className="btn my-4">
-      <h3>Register</h3>
-    </button>
-  </div>
-</section>
+    const[email, setEmail] = useState("")
+    const[password, setPassword] = useState("")
+    const[role, setRole] = useState("")
+    const navigate = useNavigate()
 
+    const handleSubmit = async (e) =>{
+        try {
+            e.preventDefault()
+            await axios({
+                methode: 'post',
+                url: 'localhost:3000/register',
+                data: {
+                    email,
+                    password,
+                    role
+                }
+            })
+            navigate('/register')
+        } catch (error) {
+            console.log(error.response.data);
+            
+        }
+    }
+    
+  return (
+    <section>
+    <form onSubmit={handleSubmit} >
+      <div className="form-group">
+        <label htmlFor="exampleInputEmail1">Email address</label>
+        <input
+          type="email"
+          className="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Email"
+          value={email} 
+          onChange={(e)=> setEmail(e.target.value)}
+        />
+        <small id="emailHelp" className="form-text text-muted"></small>
+      </div>
+      <div className="form-group">
+        <label htmlFor="exampleInputPassword1">Password</label>
+        <input
+          type="password"
+          className="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+          value={password} 
+          onChange={(e)=> setPassword(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="exampleInputRole1">Role</label>
+        <input
+          type="Role"
+          className="form-control"
+          id="exampleInputRole1"
+          placeholder="Role"
+          value={role} 
+          onChange={(e)=> setRole(e.target.value)} 
+        />
+      </div>
+      <div className="form-check">
+        <input
+          type="checkbox"
+          className="form-check-input"
+          id="exampleCheck1"
+        />
+        <label className="form-check-label" htmlFor="exampleCheck1">
+          Check me out
+        </label>
+      </div>
+      <button type="submit" className="btn btn-primary">
+        Submit
+      </button>
+    </form>
+  </section>
   )
 }

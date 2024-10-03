@@ -1,23 +1,19 @@
+import PropTypes from "prop-types"
 
-export default function Card() {
+
+export default function Card({album}) {
   return (
     <section>
-  <div className="card bg-base-100 w-96 shadow-xl ">
-    <figure>
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Shoes"
-      />
-    </figure>
-    <div className="card-body">
-      <h2 className="card-title">Shoes!</h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
-      <div className="card-actions justify-end">
-        <button className="btn btn-primary">Buy Now</button>
-      </div>
-    </div>
+<div className="card" style={{ width: "18rem" }}>
+  <img className="card-img-top" src={album.imageUrl} alt="Card image cap" />
+  <div className="card-body">
+    <h5 className="card-title">{album.albumTitle}</h5>
+    <h3>{album.artistName}</h3>
+    <a href="#" className="btn btn-primary">
+      Go somewhere
+    </a>
   </div>
+</div>
 </section>
-
   )
 }
