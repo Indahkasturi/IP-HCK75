@@ -28,4 +28,4 @@
     }
   };
 
-module.exports = { authorization, isAdmin };
+module.exports = { isAdmin };

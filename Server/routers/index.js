@@ -10,9 +10,10 @@ const router = express.Router()
 
 router.post('/register', UserController.register)
 router.post('/login', UserController.login)
+router.post('/loginGoogle', UserController.googleLogin)
 
 router.use(authentication)
-router.post('/generate-content', GeminiController.generateContent)
+// router.post('/generate-content', GeminiController.generateContent)
 router.get('/', AlbumController.home)
 router.post('/cart/:id', AlbumUserController.cart)
 router.get('/cart', AlbumUserController.getCart)

@@ -1,5 +1,5 @@
 const{Album} = require('../models/index')
-const fs = require('fs').promises; // Menggunakan promises dari fs
+const fs = require('fs').promises; 
 const path = require('path');
 
 
