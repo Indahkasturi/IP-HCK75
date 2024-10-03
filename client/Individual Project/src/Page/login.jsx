@@ -52,7 +52,70 @@ export default function Login() {
     }
   return (
     <>
-      <section>
+        <section
+            className="container mt-5"
+            style={{
+                backgroundImage: "url('https://example.com/your-album-background.jpg')", // Ganti dengan URL gambar latar belakang yang sesuai
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                height: '100vh', // Menutupi seluruh tinggi viewport
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}
+        >
+            <div className="border p-4 rounded shadow" style={{ 
+                backgroundColor: 'rgba(255, 255, 255, 0.9)', // Latar belakang putih untuk kotak login
+                width: '400px',  // Lebar kotak login
+                borderRadius: '8px',
+                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+            }}>
+                <h2 className="text-center">Login</h2>
+                <form onSubmit={handleSubmit} className="mb-4">
+                    <div className="form-group mb-3">
+                        <label htmlFor="exampleInputEmail1">Email</label>
+                        <input
+                            type="email"
+                            className="form-control"
+                            id="exampleInputEmail1"
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="form-group mb-4">
+                        <label htmlFor="exampleInputPassword1">Password</label>
+                        <input
+                            type="password"
+                            className="form-control"
+                            id="exampleInputPassword1"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="btn btn-primary w-100" style={{ borderRadius: '5px' }}>
+                        Submit
+                    </button>
+                </form>
+
+                <div className="d-flex justify-content-center mb-3">
+                    <GoogleOAuthProvider clientId="668932031752-9bs83rklhd5sdthbnod9buhvt4t5j24t.apps.googleusercontent.com">
+                        <GoogleLogin
+                            onSuccess={responseGoogle}
+                            onError={() => {
+                                console.log('Login Failed');
+                            }}
+                            style={{ width: '100%', borderRadius: '5px' }} // Memastikan lebar penuh
+                        />
+                    </GoogleOAuthProvider>
+                </div>
+
+            </div>
+        </section>
+      {/* <section>
         <form onSubmit={handleSubmit} >
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email address</label>
@@ -93,7 +156,7 @@ export default function Login() {
       />
        </GoogleOAuthProvider>
     </div>
-      </section>
+      </section> */}
     </>
   );
 }

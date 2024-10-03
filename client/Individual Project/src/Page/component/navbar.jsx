@@ -15,11 +15,15 @@ export default function Navbar() {
   return (
     <section>
       <nav className="navbar navbar-light bg-light">
-        <button className="btn btn-primary"><Link to={`/`}>Home</Link></button>
-        <Link to={`/cart`}> </Link>
+      <button className="btn btn-outline-primary"><Link to={`/admin`}> Admin Only </Link> </button>
+        <div >
+        <button className="btn btn-outline-primary"><Link to={`/`}>Home</Link></button>
+        <button className="btn btn-outline-primary"><Link to={`/cart`}> Cart </Link> </button>
+        </div>
+        
         <button
           onClick={logout}
-          className="btn btn-danger"
+          className="btn btn-outline-danger"
         >
           Logout
         </button>

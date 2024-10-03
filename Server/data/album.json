@@ -3,14 +3,14 @@
       "artistName": "Taylor Swift",
       "albumTitle": "1989",
       "genre": "Pop",
-      "imageUrl": "https://musicbrainz.org/release/408a484b-86ad-4cfb-8b79-704b48aad121/cover-art",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png",
       "price": 200000
     },
     {
       "artistName": "Drake",
       "albumTitle": "Scorpion",
       "genre": "Hip-Hop",
-       "imageUrl": "https://en.wikipedia.org/wiki/File:Scorpion_by_Drake.jpg",
+       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg",
        "price": 200000
       },
     {
@@ -24,14 +24,14 @@
       "artistName": "Adele",
       "albumTitle": "25",
       "genre": "Soul",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/55/Adele_-_25_%28Official_Album_Cover%29.png",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/96/Adele_-_25_%28Official_Album_Cover%29.png",
       "price": 300000
     },
     {
       "artistName": "Daft Punk",
       "albumTitle": "Random Access Memories",
       "genre": "Electronic",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/26/Daft_Punk_-_Random_Access_Memories.png",
       "price": 300000
     }
   ]

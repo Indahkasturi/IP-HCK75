@@ -1,9 +1,8 @@
 import { useState } from "react";
-import NavbarCMS from "./navbarCMS";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function Create() {
+export default function Add() {
   const [artistName, setArtistName] = useState("");
   const [albumTitle, setAlbumTiltle] = useState("");
   const [genre, setGenre] = useState("");
@@ -43,7 +42,7 @@ export default function Create() {
       id="new-product-section"
       style={{ marginRight: "8%" }}
     >
-      <NavbarCMS />
+
       <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 className="display-2">Add Album</h1>
       </div>

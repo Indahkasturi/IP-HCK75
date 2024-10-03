@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Card from "./component/card";
-import Navbar from "./component/navbar";
 import axios from "axios";
 
 
@@ -31,11 +30,11 @@ export default function Home() {
       
           if (!response.ok) {
             const errorData = await response.json();
-            throw new Error(errorData.message || 'Error adding album to cart');
+            throw new Error(errorData.message);
           }
       
           const data = await response.json();
-          console.log('Album added to cart:', data); // Data yang dikembalikan dari server
+          console.log('Album added to cart:', data); 
         } catch (error) {
           console.error(error.response.data);
         }
@@ -48,8 +47,6 @@ export default function Home() {
     }, []);
   return (
       <>
-
-     <Navbar/>
      {albums.map((album)=>{
         return(
             <Card

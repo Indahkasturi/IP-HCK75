@@ -6,23 +6,21 @@ export default function Card({ album, onClick }) {
 
   return (
     <section>
-      <div className="container mt-5">
-      <div className="col-md-3 mb-4 col-sm-6 mb-4">
-        <div className="card" style={{ width: "100%" }}>
-          <img
-            className="card-img-top "
-            src={album.imageUrl}
-            alt="Card image cap"
-          />
-          <div className="card-body">
-            <h3 className="card-title">{album.albumTitle}</h3>
-            <h4>{album.artistName}</h4>
-            <h5>{album.price}</h5>
-            <Link onClick={() => onClick(album.id)}>buy</Link>
-          </div>
+    <div className="col-12 mb-4"> 
+      <div className="card" style={{ width: "100%" }}>
+        <img
+          className="card-img-top"
+          src={album.imageUrl}
+          alt="Card image cap"
+        />
+        <div className="card-body">
+          <h3 className="card-title">{album.albumTitle}</h3>
+          <h4>{album.artistName}</h4>
+          <h5  style={{ color: "rgba(0, 0, 0, 0.7)" }}>Rp.{album.price}</h5>
+          <Link onClick={() => onClick(album.id)} className="btn btn-primary">Buy</Link>
         </div>
       </div>
-      </div>
+    </div>
     </section>
   );
 }

@@ -11,7 +11,16 @@ module.exports = class AlbumController{
     } catch (error) {
       next(error)   
     }
- }   
+ }  
+
+ static async adminHome(req, res, next){
+  try {
+      const album = await Album.findAll()
+      res.status(200).json(album)
+  } catch (error) {
+    next(error)   
+  }
+}   
 
  static async addAlbum(req, res, next){
     try {
@@ -22,6 +31,7 @@ module.exports = class AlbumController{
       next(error)
     }
  }   
+ 
  static async updateAlbumById(req, res, next){
     try {
         const {id} = req.params
