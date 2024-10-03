@@ -1,5 +1,6 @@
 {
-  "devDependencies": {
-    "daisyui": "^4.12.11"
+  "dependencies": {
+    "@react-oauth/google": "^0.12.1",
+    "react-google-login": "^5.2.2"
   }
 }
