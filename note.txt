@@ -1,8 +1,0 @@
-npx sequelize model:generate --name User --attributes email:string,password:string
-npx sequelize model:generate --name Album --attributes artistName:string,albumTitle:string,genre:string
-npx sequelize model:generate --name AlbumUser --attributes UserId:number,AlbumId:number
-npx sequelize db:migrate
-npx sequelize-cli migration:generate --name add-column-role
-
- npx sequelize db:create
- npx sequelize db:seed:all
