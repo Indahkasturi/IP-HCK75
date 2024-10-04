@@ -13,7 +13,7 @@ router.post('/login', UserController.login)
 router.post('/loginGoogle', UserController.googleLogin)
 
 router.use(authentication)
-// router.post('/generate-content', GeminiController.generateContent)
+router.post('/gemini', GeminiController.gemini)
 router.get('/', AlbumController.home)
 router.post('/cart/:id', AlbumUserController.cart)
 router.get('/cart', AlbumUserController.getCart)
