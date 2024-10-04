@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function Cart() {
   const [cartItems, setCartItems] = useState([]);
@@ -16,7 +17,11 @@ export default function Cart() {
 
       setCartItems(data);
     } catch (error) {
-      console.error(error.response.data);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
     }
   };
 

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-
+import Swal from "sweetalert2";
 
 
 export default function Navbar() {
@@ -9,7 +9,11 @@ export default function Navbar() {
       localStorage.clear();
       navigate("/login");
     } catch (error) {
-      console.log(error.response.data);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
     }
   };
   return (

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Admin() {
   const [albums, setAlbums] = useState([]);
@@ -14,7 +15,11 @@ export default function Admin() {
       });
       setAlbums(data);
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
     }
   };
 
@@ -27,7 +32,10 @@ export default function Admin() {
       });
       getAlbums();
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: "error",
+        title: "your not authorized",
+      });
     }
   };
 

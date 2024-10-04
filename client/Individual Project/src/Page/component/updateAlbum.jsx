@@ -26,7 +26,10 @@ export default function Update() {
       setImageUrl(data.imageUrl);
       setPrice(data.price);
     } catch (error) {
-      console.error("Error fetching album data:", error);
+      Swal.fire({
+        icon: "error",
+        text: "Error fetching data",
+      });
     }
   };
 
