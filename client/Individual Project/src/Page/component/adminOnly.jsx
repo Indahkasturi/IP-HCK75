@@ -8,7 +8,7 @@ export default function Admin() {
 
   const getAlbums = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3000/", {
+      const { data } = await axios.get("http://localhost:3000/adminHome", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
@@ -17,8 +17,7 @@ export default function Admin() {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Something went wrong!",
+        text: "your not authorized",
       });
     }
   };
@@ -34,7 +33,8 @@ export default function Admin() {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        title: "your not authorized",
+        title: "Oops...",
+        text: "Something went wrong!",
       });
     }
   };

@@ -7,7 +7,7 @@ import ChatBot from "./component/gemini";
 export default function Home() {
     const [albums, setAlbums] = useState([]);
 
-    let getAlbum = async () => {
+    let fetchAlbum = async () => {
       let { data } = await axios({
         method: "get",
         url: "http://localhost:3000/",
@@ -43,7 +43,7 @@ export default function Home() {
       
   
     useEffect(() => {
-      getAlbum();
+      fetchAlbum();
       
     }, []);
   return (

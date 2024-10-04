@@ -83,7 +83,8 @@ export default function Register() {
                     type="text"
                     className="form-control"
                     id="exampleInputRole1"
-                    placeholder="Role"
+                    placeholder="User"
+                    defaultValue="user"
                     value={role}
                     onChange={(e) => setRole(e.target.value)} 
                     required

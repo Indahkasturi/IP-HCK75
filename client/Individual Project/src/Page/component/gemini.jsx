@@ -20,16 +20,8 @@ export default function ChatBot () {
         borderRadius: '10px',
         padding: '10px',
       }}>
-        <h4>ChatBot</h4>
-        <div style={{ maxHeight: '200px', marginBottom: '10px' }}>
-          {messages.map((msg, index) => (
-            <div key={index} style={{
-              margin: '5px',
-            }}>
-              <strong></strong> {msg.text}
-            </div>
-          ))}
-        </div>
+        <h5>Ask Me</h5>
+  
         <form onSubmit={handleSubmit}>
           <input
             type="text"
