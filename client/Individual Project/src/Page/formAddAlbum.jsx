@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 export default function Add() {
   const [artistName, setArtistName] = useState("");
@@ -8,7 +9,6 @@ export default function Add() {
   const [genre, setGenre] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [price, setPrice] = useState(0)
-  import Swal from 'sweetalert2'
 
   const navigate = useNavigate()
 

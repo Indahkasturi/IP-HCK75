@@ -56,7 +56,8 @@ export default function Update() {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        title: "Youre not Authorize"
+        title: "Oops...",
+        text: "Something went wrong!",
       });
     }
   };
