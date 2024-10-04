@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import Swal from "sweetalert2"
+
 
 export default function Register() {
     const[email, setEmail] = useState("")
@@ -23,10 +23,7 @@ export default function Register() {
             })
             navigate('/register')
         } catch (error) {
-            Swal.fire({
-                icon: "error",
-                text: "Something Missing",
-              });
+            console.log(error.response.data);
             
         }
     }
@@ -61,7 +58,7 @@ export default function Register() {
                     placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-
+                    required
                 />
             </div>
             <div className="form-group mb-3">
@@ -73,7 +70,7 @@ export default function Register() {
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-
+                    required
                 />
             </div>
             <div className="form-group mb-3">
@@ -81,10 +78,11 @@ export default function Register() {
                 <input
                     type="text"
                     className="form-control"
+                    id="exampleInputRole1"
                     placeholder="Role"
                     value={role}
                     onChange={(e) => setRole(e.target.value)} 
-               
+                    required
                 />
             </div>
 

@@ -87,7 +87,7 @@ export default function Login() {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                
+                required
               />
             </div>
             <div className="form-group mb-4">
@@ -99,7 +99,7 @@ export default function Login() {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                
+                required
               />
             </div>
             <button
