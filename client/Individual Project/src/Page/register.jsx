@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import Swal from 'sweetalert2'
 
 
 export default function Register() {
@@ -10,8 +11,8 @@ export default function Register() {
     const navigate = useNavigate()
 
     const handleSubmit = async (e) =>{
+        e.preventDefault()
         try {
-            e.preventDefault()
             await axios({
                 methode: 'post',
                 url: 'http://localhost:3000/register',
@@ -21,9 +22,12 @@ export default function Register() {
                     role
                 }
             })
-            navigate('/register')
+            navigate('/login')
         } catch (error) {
-            console.log(error.response.data);
+            Swal.fire({
+                icon: "error",
+                text: "Something went wrong!",
+              });
             
         }
     }
