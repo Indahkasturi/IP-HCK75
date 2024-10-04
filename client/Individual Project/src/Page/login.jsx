@@ -10,7 +10,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const responseGoogle = async (response) => {
-    console.log(response, "....");
+    // console.log(response, "....");
     const googleToken = response.credential; 
 
     const result = await fetch("http://localhost:3000/loginGoogle", {

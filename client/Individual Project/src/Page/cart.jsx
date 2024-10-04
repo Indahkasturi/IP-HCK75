@@ -34,7 +34,8 @@ export default function Cart() {
           <div className="row">
             {cartItems.map((item) => (
               <div className="col-md-3 mb-4 col-sm-6" key={item.id}> 
-                <div className="card" style={{ width: "100%" }}>
+                <div className="card" style={{ width: "100%", minHeight: "400px",
+                flexDirection: "column"}}>
                   <img
                     className="card-img-top"
                     src={item.Album.imageUrl}
@@ -43,6 +44,7 @@ export default function Cart() {
                   <div className="card-body">
                     <h3 className="card-title">{item.Album.albumTitle}</h3>
                     <h4>{item.Album.artistName}</h4>
+                    <h6  style={{ color: "rgba(0, 0, 0, 0.7)" }}>Rp.{item.Album.price}</h6>
                   </div>
                 </div>
               </div>

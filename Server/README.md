@@ -9,15 +9,15 @@ List of available endpoints :
 -post login
 -post loginGoogle
 
-use(authentication)
+-authentication-
 
--get /
--post cart/:id'
--get /cart
--delete /deletecart/:id'
--get /admin, isAdmin
--post /addAlbum', isAdmin
--put /update/:id', isAdmin
+-GET /
+-POST cart/:id'
+-GET /cart
+-DELETE /deletecart/:id'
+-GET /admin, isAdmin
+-POST /addAlbum', isAdmin
+-PUT /update/:id', isAdmin
 -delete /delete/:id', isAdmin
 
 1. Endpoint: /register

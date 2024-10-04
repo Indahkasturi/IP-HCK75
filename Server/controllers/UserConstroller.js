@@ -53,7 +53,7 @@ module.exports = class UserController {
       const { googleToken } = req.body;
       const ticket = await client.verifyIdToken({
         idToken: googleToken,
-        audience: process.env.GOOGLE_CLIENT_ID, // Pastikan ini sesuai dengan frontend
+        audience: process.env.GOOGLE_CLIENT_ID,
       });
       const payload = ticket.getPayload();
   

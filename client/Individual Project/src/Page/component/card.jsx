@@ -16,7 +16,7 @@ export default function Card({ album, onClick }) {
         <div className="card-body">
           <h3 className="card-title">{album.albumTitle}</h3>
           <h4>{album.artistName}</h4>
-          <h5  style={{ color: "rgba(0, 0, 0, 0.7)" }}>Rp.{album.price}</h5>
+          
           <Link onClick={() => onClick(album.id)} className="btn btn-primary">Buy</Link>
         </div>
       </div>
