@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -44,7 +45,11 @@ export default function Login() {
       localStorage.setItem("access_token", data.access_token);
       navigate("/");
     } catch (error) {
-      console.log(error.response);
+      Swal.fire({
+        icon: "error",
+        title: "Email or Password failed",
+
+      });
     }
   };
   return (

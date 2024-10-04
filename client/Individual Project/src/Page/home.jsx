@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "./component/card";
 import axios from "axios";
+import ChatBot from "./component/gemini";
 
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
           const response = await fetch(`http://localhost:3000/cart/${albumId}`, {
             method: 'POST',
             headers: {
-              'Authorization': `Bearer ${localStorage.getItem("access_token")}` 
+              Authorization: `Bearer ${localStorage.getItem("access_token")}` 
             }
           });
       
@@ -55,6 +56,8 @@ export default function Home() {
             onClick={addAlbumToCart}/>
         )
      })}
+
+     <ChatBot/>
 
       </>
   )

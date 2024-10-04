@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 export default function Update() {
   const [artistName, setArtistName] = useState("");
@@ -53,7 +54,10 @@ export default function Update() {
       );
       navigate('/admin');
     } catch (error) {
-      console.error("Error updating album:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Youre not Authorize"
+      });
     }
   };
 

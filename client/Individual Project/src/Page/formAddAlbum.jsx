@@ -8,6 +8,7 @@ export default function Add() {
   const [genre, setGenre] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [price, setPrice] = useState(0)
+  import Swal from 'sweetalert2'
 
   const navigate = useNavigate()
 
@@ -31,7 +32,11 @@ export default function Add() {
       navigate('/')
 
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
       
     }
   };
