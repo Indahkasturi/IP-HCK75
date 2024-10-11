@@ -1,0 +1,38 @@
+[
+    {
+      "artistName": "Taylor Swift",
+      "albumTitle": "1989",
+      "genre": "Pop",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png",
+      "price": 200000
+    },
+    {
+      "artistName": "Drake",
+      "albumTitle": "Scorpion",
+      "genre": "Hip-Hop",
+       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/90/Scorpion_by_Drake.jpg",
+       "price": 200000
+      },
+    {
+      "artistName": "The Beatles",
+      "albumTitle": "Abbey Road",
+      "genre": "Rock",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg",
+      "price": 200000
+    },
+    {
+      "artistName": "Adele",
+      "albumTitle": "25",
+      "genre": "Soul",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/96/Adele_-_25_%28Official_Album_Cover%29.png",
+      "price": 300000
+    },
+    {
+      "artistName": "Daft Punk",
+      "albumTitle": "Random Access Memories",
+      "genre": "Electronic",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/26/Daft_Punk_-_Random_Access_Memories.png",
+      "price": 300000
+    }
+  ]
+  
