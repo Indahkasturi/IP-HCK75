@@ -29,7 +29,7 @@ export default function Add() {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`
         }
       });
-      navigate('/')
+      navigate('/admin')
 
     } catch (error) {
       Swal.fire({
