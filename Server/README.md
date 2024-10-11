@@ -5,9 +5,9 @@ Endpoints Server Side:
 List of available endpoints :
 
 
--post register
--post login
--post loginGoogle
+-POST register
+-POST login
+-POST loginGoogle
 
 -authentication-
 
@@ -28,8 +28,7 @@ Method: POST
 Description: Registers a new user.
 Response:
 Success: Returns a success message.
-Failure: Error message (
-    validation errors).
+Failure: Error message (validation errors).
 
 2. Login a User
 Endpoint: /login
@@ -38,8 +37,7 @@ Description: Logs in a user with email and password.
 Request Body:
 Response:
 Success: Returns a token and user information.
-Failure: Error message (
-    invalid credentials).
+Failure: Error message (invalid credentials).
 
 3. Google Login
 Endpoint: /loginGoogle
@@ -59,8 +57,7 @@ Headers:
 Authorization: Bearer <token>
 Response:
 Success: Returns an array of albums.
-Failure: Error message (
-    unauthorized access).
+Failure: Error message ( unauthorized access).
 Cart Routes (Authentication Required)
 
 5. Add Album to Cart
@@ -71,8 +68,7 @@ Headers:
 Authorization: Bearer <token>
 Response:
 Success: Returns the updated cart.
-Failure: Error message (
-    album not found, unauthorized access).
+Failure: Error message (album not found, unauthorized access).
 
 6. Get User Cart
 Endpoint: /cart
@@ -82,8 +78,7 @@ Headers:
 Authorization: Bearer <token>
 Response:
 Success: Returns the user's cart.
-Failure: Error message (
-    cart is empty, unauthorized access).
+Failure: Error message ( cart is empty, unauthorized access).
 
 7. Delete Album from Cart
 Endpoint: /deletecart/:id

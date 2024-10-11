@@ -6,6 +6,7 @@ class GeminiController {
   static async gemini(req, res, next) {
     try {
       const {prompt} = req.body;
+console.log(prompt);
 
       const result = await model.generateContent(prompt)
 

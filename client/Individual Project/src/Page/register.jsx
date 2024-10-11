@@ -36,7 +36,7 @@ export default function Register() {
     <section
     className="container mt-5"
     style={{
-        backgroundImage: "url('https://files.oaiusercontent.com/file-0jBlFHo0sofmj2L5GiZppt0X?se=2024-10-03T19%3A28%3A26Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D70df77e4-6f05-4f55-b5b7-dd0893e3a316.webp&sig=PKRWqNYGQ6Wv2RJavCQMvaNJHjYIOERYRh8j8k4KYrk%3D')",
+        backgroundImage: "url('https://files.oaiusercontent.com/file-o22B58Q0C9pvbf7Ie3bV0LKd?se=2024-10-04T08%3A22%3A35Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D10c648cb-02ae-493a-b6f5-e82b1793a4cc.webp&sig=8uDzeZ9/SWXDFtMip5ueAai9peBr7MErmXuD0oVi4tY%3D')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '100vh', 

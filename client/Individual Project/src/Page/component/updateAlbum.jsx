@@ -15,7 +15,7 @@ export default function Update() {
 
   const getAlbum = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/albums/${id}`, {
+      const { data } = await axios.get(`http://localhost:3000/cart`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
