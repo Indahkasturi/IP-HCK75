@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import { Link } from "react-router-dom";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ export default function Login() {
 
   const responseGoogle = async (response) => {
     // console.log(response, "....");
-    const googleToken = response.credential; 
+    const googleToken = response.credential;
 
     const result = await fetch("http://localhost:3000/loginGoogle", {
       method: "POST",
@@ -48,7 +48,6 @@ export default function Login() {
       Swal.fire({
         icon: "error",
         title: "Email or Password failed",
-
       });
     }
   };
@@ -87,7 +86,6 @@ export default function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-
               />
             </div>
             <div className="form-group mb-4">
@@ -100,7 +98,6 @@ export default function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-
               />
             </div>
             <button
@@ -110,7 +107,10 @@ export default function Login() {
             >
               Submit
             </button>
-            <button style={{marginTop : '15px', marginLeft : '39%'}} className="btn btn-outline-primary">
+            <button
+              style={{ marginTop: "15px", marginLeft: "39%" }}
+              className="btn btn-outline-primary"
+            >
               <Link to={"/register"}>Register</Link>
             </button>
           </form>

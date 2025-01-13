@@ -24,9 +24,10 @@ export default function Register() {
             })
             navigate('/login')
         } catch (error) {
+            console.error(error.response)
             Swal.fire({
                 icon: "error",
-                text: "Something went wrong!",
+                text: error
               });
             
         }

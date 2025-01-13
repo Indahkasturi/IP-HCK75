@@ -34,7 +34,7 @@ export default function Admin() {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        title: "your not authorized",
+        title: error.response?.data.message,
       });
     }
   };

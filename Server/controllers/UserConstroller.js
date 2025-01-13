@@ -31,7 +31,7 @@ module.exports = class UserController {
       if (!user) {
         throw {
           name: "Unauthorized",
-          message: "error invalid email or password",
+          message: error.message,
         };
       }
       const isValidPassword = compareHashed(password, user.password);
@@ -48,6 +48,7 @@ module.exports = class UserController {
       next(error);
     }
   }
+  
   static async googleLogin(req, res, next) {
     try {
       const { googleToken } = req.body;

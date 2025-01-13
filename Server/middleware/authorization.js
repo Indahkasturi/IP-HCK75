@@ -18,6 +18,8 @@
 
   async function isAdmin(req, res, next) {
     try {
+      // console.log("masuk admin");
+      
       const { role } = req.user;
       if (role !== "admin") {
         throw { name: "Forbidden", message: "You are not authorized" };

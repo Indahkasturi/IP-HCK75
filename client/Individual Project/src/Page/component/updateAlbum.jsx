@@ -15,7 +15,7 @@ export default function Update() {
 
   const getAlbum = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/cart`, {
+      const { data } = await axios.get(`http://localhost:3000/update/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
@@ -28,7 +28,8 @@ export default function Update() {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        text: "Error fetching data",
+        title: "Oops...",
+        text: error.response?.data.message,
       });
     }
   };

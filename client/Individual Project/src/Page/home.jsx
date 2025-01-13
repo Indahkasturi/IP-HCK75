@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Card from "./component/card";
-import axios from "axios";
 import ChatBot from "./component/gemini";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAlbumSuccess, isLoading, isError, fetchAlbum } from "../store/album";
