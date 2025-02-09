@@ -15,25 +15,21 @@ export default function Update() {
 
   const getAlbum = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/update/${id}`, {
+      const { data } = await axios.get(`http://localhost:3000/albums/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       });
+      console.log("Fetched album data:", data); // Tambahkan log ini
       setArtistName(data.artistName);
       setAlbumTitle(data.albumTitle);
       setGenre(data.genre);
       setImageUrl(data.imageUrl);
       setPrice(data.price);
     } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: error.response?.data.message,
-      });
+      console.log("Error fetching album:", error.response);
     }
   };
-
   useEffect(() => {
     getAlbum();
   }, [id]);
@@ -89,7 +85,7 @@ export default function Update() {
                 placeholder="Enter artist name"
                 autoComplete="off"
                 required
-                value={artistName}
+               defaultValue={artistName}
                 onChange={(e) => setArtistName(e.target.value)}
               />
             </div>
@@ -104,7 +100,7 @@ export default function Update() {
                 placeholder="Enter album title"
                 autoComplete="off"
                 required
-                value={albumTitle}
+               defaultValue={albumTitle}
                 onChange={(e) => setAlbumTitle(e.target.value)}
               />
             </div>
@@ -119,7 +115,7 @@ export default function Update() {
                 placeholder="Enter genre"
                 autoComplete="off"
                 required
-                value={genre}
+               defaultValue={genre}
                 onChange={(e) => setGenre(e.target.value)}
               />
             </div>
@@ -134,7 +130,7 @@ export default function Update() {
                 placeholder="Enter image URL"
                 autoComplete="off"
                 required
-                value={imageUrl}
+               defaultValue={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
               />
             </div>
@@ -149,7 +145,7 @@ export default function Update() {
                 placeholder="Enter price"
                 autoComplete="off"
                 required
-                value={price}
+               defaultValue={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
             </div>
