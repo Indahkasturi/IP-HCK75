@@ -26,7 +26,7 @@ export default function Home() {
        await response.json();
             Swal.fire({
               icon: "success",
-              text: "Image uploaded successfully",
+              text: "Album added to your cart",
     
             });
       

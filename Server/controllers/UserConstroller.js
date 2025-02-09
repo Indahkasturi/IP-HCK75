@@ -42,8 +42,8 @@ module.exports = class UserController {
         };
       }
 
-      const access_token = signToken({ id: user.id });
-      res.status(200).json({ access_token });
+      const access_token = signToken({ id: user.id, role: user.role  });
+      res.status(200).json({ access_token, role: user.role  });
     } catch (error) {
       next(error);
     }

@@ -25,7 +25,8 @@ export default function Login() {
     });
     const data = await result.json();
     // console.log(data, "<<<<<");
-    localStorage.setItem("access_token", data.access_token);
+    localStorage.setItem("access_token", data.access_token)
+    localStorage.setItem("role", data.role);
     navigate("/");
   };
 
@@ -40,9 +41,9 @@ export default function Login() {
           password,
         },
       });
-      console.log(data);
-
+      // console.log(data);
       localStorage.setItem("access_token", data.access_token);
+      localStorage.setItem("role", data.role)
       navigate("/");
     } catch (error) {
       Swal.fire({

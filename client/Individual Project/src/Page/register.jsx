@@ -27,7 +27,7 @@ export default function Register() {
             console.error(error.response)
             Swal.fire({
                 icon: "error",
-                text: error
+                text: error.response?.data?.message  || error.message
               });
             
         }
