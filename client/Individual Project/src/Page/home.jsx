@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Card from "./component/card";
 import ChatBot from "./component/gemini";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAlbumSuccess, isLoading, isError, fetchAlbum } from "../store/album";
+import { fetchAlbum } from "../store/album";
+import Swal from "sweetalert2";
 
 export default function Home() {
-  // const [albums, setAlbums] = useState([]);
-  const dispatch = useDispatch()
-  const {albums, isLoading, errors} = useSelector((state)=> state.albums)
-
+  const dispatch = useDispatch();
+  const { albums } = useSelector((state) => state.albums);
 
   const addAlbumToCart = async (albumId) => {
     try {
@@ -24,34 +23,34 @@ export default function Home() {
         throw new Error(errorData.message);
       }
 
-      const data = await response.json();
-      console.log("Album added to cart:", data);
+       await response.json();
+            Swal.fire({
+              icon: "success",
+              text: "Image uploaded successfully",
+    
+            });
+      
     } catch (error) {
-      console.error(error.response.data);
+      console.error(error.message);
     }
   };
 
   useEffect(() => {
     dispatch(fetchAlbum());
-  }, []);
+  }, [dispatch]);
+
   return (
     <>
-     <div>
-       <div className="row">
-      {albums.map((album) => {
-        return ( 
-            <div className="col-3">
-          <Card key={album.id} 
-         // albumId={album.id} 
-         album={album} 
-         onClick={addAlbumToCart} />;
-          </div>
-        )
-      })}
+      <div>
+        <div className="row">
+          {albums.map((album) => (
+            <div className="col-3" key={album.id}>
+              <Card album={album} onClick={() => addAlbumToCart(album.id)} />
+            </div>
+          ))}
+        </div>
       </div>
-      </div>
-     
-        <ChatBot />
+      <ChatBot />
     </>
   );
 }

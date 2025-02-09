@@ -21,6 +21,7 @@ router.get('/cart', AlbumUserController.getCart)
 router.delete('/deletecart/:id', AlbumUserController.deleteCart)
 router.get('/admin', isAdmin, AlbumController.adminHome)
 router.post('/addAlbum', isAdmin, AlbumController.addAlbum)
+router.get("/albums/:id", AlbumController.getAlbumById);
 router.put('/update/:id', isAdmin, AlbumController.updateAlbumById)
 router.patch('/album/:id/imageUrl', upload.single("imageUrl"), AlbumController.uploadImg)
 router.delete('/delete/:id', isAdmin, AlbumController.deleteAlbumById)
