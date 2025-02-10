@@ -67,14 +67,14 @@ export default function Add() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="product-name">
+              <label htmlFor="product-title">
                 Album Title <span className="text-danger fw-bold">*</span>
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="product-name"
-                placeholder="Enter product name"
+                id="title"
+                placeholder="Enter album title"
                 autoComplete="off"
                 required=""
                 value={albumTitle}
@@ -89,8 +89,8 @@ export default function Add() {
               <input
                 type="text"
                 className="form-control"
-                id="product-name"
-                placeholder="Enter product name"
+                id="product-genre"
+                placeholder="Enter album genre"
                 autoComplete="off"
                 required=""
                 value={genre}
@@ -105,7 +105,7 @@ export default function Add() {
                 type="text"
                 className="form-control"
                 id="product-name"
-                placeholder="Enter product name"
+                placeholder="Enter image url"
                 autoComplete="off"
                 required=""
                 value={imageUrl}
@@ -120,7 +120,7 @@ export default function Add() {
                 type="number"
                 className="form-control"
                 id="product-name"
-                placeholder="Enter product name"
+                placeholder="Enter album"
                 autoComplete="off"
                 required=""
                 value={price}
