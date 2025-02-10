@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const { albums } = useSelector((state) => state.albums);
+  const { albums, isLoading, errors } = useSelector((state) => state.albums);
 
   const addAlbumToCart = async (albumId) => {
     try {
@@ -23,13 +23,11 @@ export default function Home() {
         throw new Error(errorData.message);
       }
 
-       await response.json();
-            Swal.fire({
-              icon: "success",
-              text: "Album added to your cart",
-    
-            });
-      
+      await response.json();
+      Swal.fire({
+        icon: "success",
+        text: "Album added to your cart",
+      });
     } catch (error) {
       console.error(error.message);
     }
@@ -43,6 +41,8 @@ export default function Home() {
     <>
       <div>
         <div className="row">
+          {isLoading && <p>Loading...</p>} 
+          {errors && <p style={{ color: "red" }}>{errors}</p>}{" "}
           {albums.map((album) => (
             <div className="col-3" key={album.id}>
               <Card album={album} onClick={() => addAlbumToCart(album.id)} />

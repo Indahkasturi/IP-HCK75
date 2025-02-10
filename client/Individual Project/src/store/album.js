@@ -12,22 +12,23 @@ export const albumSlice = createSlice({
     fetchAlbumSuccess: (state, action) => {
       state.albums = action.payload;
     },
-    isLoading: (state, action) => {
+    setLoading: (state, action) => {  // 🔥 Ganti nama dari isLoading ➝ setLoading
       state.isLoading = action.payload;
     },
-    isError: (state, action) => {
+    setError: (state, action) => { // 🔥 Ganti nama dari isError ➝ setError
       state.errors = action.payload;
     },
   },
 });
-export const { fetchAlbumSuccess, isLoading, isError } = albumSlice.actions;
+
+export const { fetchAlbumSuccess, setLoading, setError } = albumSlice.actions;
 
 export default albumSlice.reducer;
 
 export const fetchAlbum = () => {
   return async (dispatch) => {
     try {
-      dispatch(isLoading(true));
+      dispatch(setLoading(true)); 
       let { data } = await axios({
         method: "get",
         url: "http://localhost:3000/",
@@ -35,14 +36,13 @@ export const fetchAlbum = () => {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       });
-    //   console.log(data);
-    dispatch(fetchAlbumSuccess(data))
 
+      dispatch(fetchAlbumSuccess(data));
     } catch (error) {
-      console.log(error);
-      dispatch(isError(error));
+      console.error(error);
+      dispatch(setError(error.message)); 
     } finally {
-      dispatch(isLoading(false));
+      dispatch(setLoading(false));
     }
   };
 };

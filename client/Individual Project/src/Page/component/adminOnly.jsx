@@ -1,27 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAlbum } from "../../store/album";
 
 export default function Admin() {
-  const [albums, setAlbums] = useState([]);
 
-  const getAlbums = async () => {
-    try {
-      const { data } = await axios.get("http://localhost:3000/", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-        },
-      });
-      setAlbums(data);
-    } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Something went wrong!",
-      });
-    }
-  };
+  const dispatch = useDispatch();
+  const { albums } = useSelector((state) => state.albums);
+
 
   const handleOnDelete = async (id) => {
     try {
@@ -30,7 +18,6 @@ export default function Admin() {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       });
-      getAlbums();
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -40,8 +27,8 @@ export default function Admin() {
   };
 
   useEffect(() => {
-    getAlbums();
-  }, []);
+    dispatch(fetchAlbum());
+  }, [dispatch]);
 
   return (
 <section
