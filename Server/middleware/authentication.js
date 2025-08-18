@@ -16,15 +16,18 @@ module.exports = async function authentication(req, res, next) {
     }
     const data = verifyToken(token);
     const user = await User.findByPk(data.id);
-    if(!user){
-        next({name:"Unauthorized", message: "Invalid Token"})
-        return
+    if (!user) {
+      next({ name: "Unauthorized", message: "Invalid Token" })
+      return
     }
     req.user = {
       id: user.id,
       role: user.role
     }
-    next()
+    // console.log("=== AUTHENTICATION ===");
+    // console.log("User from DB:", user.role);
+    // console.log("req.user:", req.user);
+    next();
   } catch (error) {
     next(error)
   }

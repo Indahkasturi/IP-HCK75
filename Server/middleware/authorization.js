@@ -21,7 +21,7 @@
       // console.log("masuk admin");
       
       const { role } = req.user;
-      if (role !== "admin") {
+      if (role.toLowerCase() !== "admin") {
         throw { name: "Forbidden", message: "You are not authorized" };
     }
       next();

@@ -20,7 +20,7 @@ export default function Update() {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       });
-      console.log("Fetched album data:", data); // Tambahkan log ini
+      // console.log("Fetched album data:", data); 
       setArtistName(data.artistName);
       setAlbumTitle(data.albumTitle);
       setGenre(data.genre);

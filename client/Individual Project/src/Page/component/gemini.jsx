@@ -23,7 +23,7 @@ export default function ChatBot() {
 
       setMessages((prevMessages) => [  
         ...prevMessages,
-        { sender: 'gemini', text: date.data },
+        { sender: 'gemini', text: date.data.result },
       ]);
     } catch (err) {
       console.log(err);

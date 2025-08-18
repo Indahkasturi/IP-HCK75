@@ -6,8 +6,8 @@ export default function Navbar() {
 
   const handleAdminClick = () => {
     const role = localStorage.getItem("role");
-    console.log("User role:", role); // Add logging to check the role
-    if (role !== "admin") {
+    // console.log("User role:", role);
+    if (role.toLowerCase() !== "admin") {
       Swal.fire({
         icon: "error",
         title: "Access Denied",
