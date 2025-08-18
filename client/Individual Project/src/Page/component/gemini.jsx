@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import ReactMarkdown from "react-markdown";
+
 
 export default function ChatBot() {
   const [prompt, setPrompt] = useState(''); 
@@ -54,21 +56,23 @@ export default function ChatBot() {
         borderRadius: '5px',
         marginBottom: '10px',
       }}>
-        {messages.map((message, index) => (
-          <div key={index} style={{
-            textAlign: message.sender === 'user' ? 'right' : 'left',
-            margin: '5px 0',
-          }}>
-            <span style={{
-              backgroundColor: message.sender === 'user' ? '#d1e7dd' : '#f0f0f0',
-              padding: '5px 10px',
-              borderRadius: '10px',
-              display: 'inline-block',
-            }}>
-              {message.text}
-            </span>
-          </div>
-        ))}
+     {messages.map((message, index) => (
+  <div key={index} style={{
+    textAlign: message.sender === 'user' ? 'right' : 'left',
+    margin: '5px 0',
+  }}>
+    <div style={{
+      backgroundColor: message.sender === 'user' ? '#d1e7dd' : '#f0f0f0',
+      padding: '5px 10px',
+      borderRadius: '10px',
+      display: 'inline-block',
+      whiteSpace: 'pre-wrap',
+    }}>
+      <ReactMarkdown>{message.text}</ReactMarkdown>
+    </div>
+  </div>
+))}
+
       </div>
 
       {/* Input form */}
