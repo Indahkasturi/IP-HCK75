@@ -8,7 +8,8 @@ export default function ChatBot() {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    if (prompt); 
+  if (!prompt) return;
+
     setMessages((prevMessages) => [...prevMessages, { sender: 'user', text: prompt }]);
   
     const token = localStorage.getItem("access_token");

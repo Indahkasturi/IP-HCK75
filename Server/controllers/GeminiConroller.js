@@ -9,8 +9,10 @@ class GeminiController {
       console.log(prompt);
 
       const result = await model.generateContent(prompt)
+      const text = await result.response.text();
+      // console.log(text, "ini <<<<<<<<<<<<<<");
+      res.json({ result: text });
 
-      res.send(result.response.text());
     } catch (error) {
       next(error);
     }
