@@ -53,124 +53,159 @@ export default function Login() {
     }
   };
   return (
-    <>
-      <section
-        className="container mt-5"
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "#AFCCD3",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: "'Georgia', 'Times New Roman', Times, serif",
+      }}
+    >
+      <div
         style={{
-          backgroundImage: "url('./assets/1.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          background: "#FFFFFF",
+          borderRadius: "6px",
+          boxShadow: "0 2px 8px 0 rgba(125, 171, 183, 0.10)",
+          padding: "36px 28px 28px 28px",
+          width: "100%",
+          maxWidth: "370px",
+          border: "2px solid #7DABB7",
         }}
       >
-        <div
-          className="border p-4 rounded shadow"
+        <h2
           style={{
-            backgroundColor: "rgba(255, 255, 255, 0.9)",
-            width: "400px",
-            borderRadius: "8px",
-            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+            color: "#5E7B81",
+            fontWeight: 700,
+            textAlign: "center",
+            marginBottom: "22px",
+            fontFamily: "'Georgia', 'Times New Roman', Times, serif",
+            fontSize: 28,
+            letterSpacing: 0.5,
           }}
         >
-          <h2 className="text-center">Login</h2>
-          <form onSubmit={handleSubmit} className="mb-4">
-            <div className="form-group mb-3">
-              <label htmlFor="exampleInputEmail1">Email</label>
-              <input
-                type="email"
-                className="form-control"
-                id="exampleInputEmail1"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group mb-4">
-              <label htmlFor="exampleInputPassword1">Password</label>
-              <input
-                type="password"
-                className="form-control"
-                id="exampleInputPassword1"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="btn btn-primary w-100"
-              style={{ borderRadius: "5px" }}
-            >
-              Submit
-            </button>
-            <button
-              style={{ marginTop: "15px", marginLeft: "39%" }}
-              className="btn btn-outline-primary"
-            >
-              <Link to={"/register"}>Register</Link>
-            </button>
-          </form>
-
-          <div className="d-flex justify-content-center mb-3">
-            <GoogleOAuthProvider clientId="668932031752-9bs83rklhd5sdthbnod9buhvt4t5j24t.apps.googleusercontent.com">
-              <GoogleLogin
-                onSuccess={responseGoogle}
-                onError={() => {
-                  console.log("Login Failed");
-                }}
-                style={{ width: "100%", borderRadius: "5px" }}
-              />
-            </GoogleOAuthProvider>
-          </div>
+          Login
+        </h2>
+        <form onSubmit={handleSubmit}>
+        <div style={{ marginBottom: "16px" }}>
+          <label
+            htmlFor="exampleInputEmail1"
+            style={{ color: "#5E7B81", fontWeight: 600, marginBottom: 4, display: "block", fontFamily: "'Georgia', serif", fontSize: 15 }}
+          >
+            Email
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            id="exampleInputEmail1"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={{
+              border: "1px solid #7DABB7",
+              borderRadius: "4px",
+              padding: "9px 11px",
+              width: "100%",
+              background: "#FFFFFF",
+              color: "#000000",
+              fontSize: "1rem",
+              outline: "none",
+              marginTop: 2,
+              fontFamily: "'Georgia', serif",
+            }}
+          />
         </div>
-      </section>
-      {/* <section>
-        <form onSubmit={handleSubmit} >
-          <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Email"
-              value={email} 
-              onChange={(e)=> setEmail(e.target.value)}
-            />
-            <small id="emailHelp" className="form-text text-muted"></small>
-          </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Password"
-              value={password} 
-              onChange={(e)=> setPassword(e.target.value)}
-            />
-          </div>
-   
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
+        <div style={{ marginBottom: "18px" }}>
+          <label
+            htmlFor="exampleInputPassword1"
+            style={{ color: "#5E7B81", fontWeight: 600, marginBottom: 4, display: "block", fontFamily: "'Georgia', serif", fontSize: 15 }}
+          >
+            Password
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={{
+              border: "1px solid #7DABB7",
+              borderRadius: "4px",
+              padding: "9px 11px",
+              width: "100%",
+              background: "#FFFFFF",
+              color: "#000000",
+              fontSize: "1rem",
+              outline: "none",
+              marginTop: 2,
+              fontFamily: "'Georgia', serif",
+            }}
+          />
+        </div>
+        <button
+          type="submit"
+          style={{
+            width: "100%",
+            background: "#7DABB7",
+            color: "#fff",
+            fontWeight: 600,
+            border: "1px solid #7DABB7",
+            borderRadius: "4px",
+            padding: "10px 0",
+            fontSize: "1.05rem",
+            marginBottom: "12px",
+            fontFamily: "'Georgia', serif",
+            letterSpacing: 0.5,
+            cursor: "pointer",
+            transition: "background 0.2s",
+          }}
+          onMouseOver={e => e.currentTarget.style.background = '#51696E'}
+          onMouseOut={e => e.currentTarget.style.background = '#7DABB7'}
+        >
+          Login
+        </button>
         </form>
-        <div>
-        <GoogleOAuthProvider clientId="668932031752-9bs83rklhd5sdthbnod9buhvt4t5j24t.apps.googleusercontent.com">
-      <GoogleLogin
-        onSuccess={responseGoogle}
-        onError={() => {
-          console.log('Login Failed');
-        }}
-      />
-       </GoogleOAuthProvider>
+        <div style={{ textAlign: "center", marginBottom: "14px" }}>
+          <span style={{ color: "#51696E", fontWeight: 500, fontFamily: "'Georgia', serif", fontSize: 15 }}>Don't have an account?</span>
+          <Link
+            to={"/register"}
+            style={{
+              color: "#51696E",
+              fontWeight: 600,
+              marginLeft: 8,
+              textDecoration: "underline",
+              fontFamily: "'Georgia', serif",
+              fontSize: 15,
+              transition: "color 0.2s",
+            }}
+          >
+            Register
+          </Link>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", margin: "14px 0" }}>
+          <div style={{ flex: 1, height: 1, background: "#718C93" }} />
+          <span style={{ margin: "0 12px", color: "#718C93", fontWeight: 500, fontSize: 14, fontFamily: "'Georgia', serif" }}>or</span>
+          <div style={{ flex: 1, height: 1, background: "#718C93" }} />
+        </div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <GoogleOAuthProvider clientId="668932031752-9bs83rklhd5sdthbnod9buhvt4t5j24t.apps.googleusercontent.com">
+            <GoogleLogin
+              onSuccess={responseGoogle}
+              onError={() => {
+                console.log("Login Failed");
+              }}
+              width="100%"
+              theme="filled_blue"
+              shape="pill"
+              text="continue_with"
+            />
+          </GoogleOAuthProvider>
+        </div>
+      </div>
     </div>
-      </section> */}
-    </>
   );
 }

@@ -8,6 +8,7 @@ import Add from "./Page/formAddAlbum"
 import Update from "./Page/component/updateAlbum"
 import RootLayout from "./layout/rootLayout"
 import UploadImage from "./Page/uploadimage"
+import AdminOrders from "./Page/orders"
 
 
 
@@ -61,7 +62,12 @@ const router = createBrowserRouter([
             {
                 path: "/upload/:id",
                 element: <UploadImage/>
-            }
+            },
+             {
+                path: "/orders",
+                element: <AdminOrders/>
+            },
+          
           ]
     },
    
